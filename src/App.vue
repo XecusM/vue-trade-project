@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class=container>
     <appHeader></appHeader>
     <div class="row">
       <div class="col-12">
         <router-view></router-view>
       </div>
-    </div>
+    </div>    
   </div>
 </template>
 
@@ -19,5 +19,7 @@
 </script>
 
 <style>
-
+  body{
+    padding-top: 30px;
+  }
 </style>

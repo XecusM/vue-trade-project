@@ -1,7 +1,6 @@
 <template lang="html">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <router-link to="/" class="navbar-brand">Stock Trader</router-link>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <router-link to="/portfolio" class="nav-item" activeClass="active" tag="li"><a class="nav-link">Portfolio</a></router-link>
@@ -35,8 +34,8 @@
   }
 </script>
 
-<style lang="css">
-  body{
-    padding: 30px;
+<style lang="css" scoped>
+  nav{
+    margin-bottom: 30px;
   }
 </style>
