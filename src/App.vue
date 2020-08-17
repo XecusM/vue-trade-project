@@ -5,7 +5,7 @@
       <div class="col-12">
         <router-view></router-view>
       </div>
-    </div>    
+    </div>
   </div>
 </template>
 
@@ -15,6 +15,9 @@
     components: {
       appHeader: Header
     },
+    created() {
+      this.$store.dispatch('initStocks')
+    }
   }
 </script>
 

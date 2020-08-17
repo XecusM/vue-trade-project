@@ -2,18 +2,28 @@
   <div class="col-sm-6 col-md-4">
     <div class="card" style="max-width: 18rem;">
       <div class="card-header text-white bg-success mb-3">
-        Name
-        <small>(price: PRICE)</small>
+        {{ stock.name }}
+        <small>(price: {{ stock.price }})</small>
       </div>
       <div class="card-body row">
         <div class="col-8">
           <div class="float-left">
-            <input type="number" class="form-control" placeholder="Quantity">
+            <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Quantity"
+                  v-model.number="quantity">
           </div>
         </div>
         <div class="col-4">
           <div class="float-right">
-            <button type="button" class="btn btn-success">Buy</button>
+            <button
+                    type="button"
+                    class="btn btn-success"
+                    @click="buyStock"
+                    :disabled="quantity <= 0 || !Number.isInteger(quantity)">
+              Buy
+            </button>
           </div>
         </div>
       </div>
@@ -24,9 +34,26 @@
 
 <script>
 export default {
+  props: ['stock'],
+  data(){
+    return {
+      quantity: 0
+    }
+  },
+  methods:{
+    buyStock(){
+      const order = {
+        stockId: this.stock.id,
+        stockPrice: this.stock.price,
+        quantity: this.quantity
+      }
+      console.log(order)
+      this.quantity = 0
+    },
+  }
 }
 </script>
 
 <style lang="css" scoped>
-  
+
 </style>
