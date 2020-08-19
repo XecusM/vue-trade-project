@@ -25,4 +25,7 @@
   body{
     padding-top: 30px;
   }
+  .bg-light{
+    background-color: #f5f5f5 !important;
+  }
 </style>
